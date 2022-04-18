@@ -1,0 +1,31 @@
+server:
+  port: 2002
+
+spring:
+  application:
+    name: seata-storage-service
+
+
+
+  datasource:
+    #url: jdbd:mysql://localhost:3306/seata_storage
+    username: root
+    password: 1234
+    #driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/seata_otorage?useUnicode=true&characterEncoding=utf-8&useSSL=false
+ # cloud:
+   # alibaba:
+    #  seata:
+    #    tx-service-group: fsp_tx_group
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
