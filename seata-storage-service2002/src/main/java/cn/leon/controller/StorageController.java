@@ -4,6 +4,7 @@ import cn.leon.entity.CommonResult;
 import cn.leon.service.StorageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -22,7 +23,7 @@ public class StorageController {
     private StorageService storageService;
 
     @RequestMapping("/storage/decrease")
-    public CommonResult decrease(Long productId, Integer count) {
+    public CommonResult decrease(@RequestParam("productId") Long productId, @RequestParam("count") Integer count) {
 
         int decrease = storageService.decrease(productId, count);
 
